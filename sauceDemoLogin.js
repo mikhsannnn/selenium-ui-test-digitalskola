@@ -34,8 +34,12 @@ async function sauceDemoLogin(){
         let titleCart = await driver.findElement(By.xpath("//span[@class='title']")).getText();
         assert.strictEqual(titleCart.includes('Your Cart'), true, "Title does not include 'Your Cart' ");
 
+        await driver.findElement(By.className('shopping_cart_link')).click();
+        await driver.wait(until.elementLocated(By.className('cart_item')), 5000);
+        console.log('Cart validated successfully.');
+
     } finally {
-        await driver.quit();
+        // await driver.quit();
     }
 }
 
