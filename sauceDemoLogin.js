@@ -39,7 +39,7 @@ async function sauceDemoLogin(){
         console.log('Cart validated successfully.');
 
     } finally {
-        // await driver.quit();
+        await driver.quit();
     }
 }
 
